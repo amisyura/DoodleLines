@@ -36,10 +36,18 @@
     // Item storages
     NSMutableArray *boardItems; // Main board
     NSMutableArray *previewBoardItems; // Preview board
-    
+
+    // Scores counter
     int scores;
+
+    // Taps counter
     int taps;
+
+    // Speed state
     float speed;
+
+    // Counter of removed blocks
+    int removedBlocks;
 }
 
 @property (assign, nonatomic) id<DLBrainDelegate> delegate;
@@ -54,6 +62,7 @@
 - (int) getScores;
 - (int) getTaps;
 - (float) getSpeed;
+- (int) getRemovedBlocks;
 
 // Mechanics
 - (void) restructureBoardItemsWithCellsCoords: (NSMutableSet *) cellsCoords;

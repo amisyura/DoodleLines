@@ -48,6 +48,7 @@
 - (void) reset {
     scores = 0;
     subtotalScores = 0;
+    removedBlocks = 0;
     subtotalSpeed = SUBTOTAL_SPEED_DEFAULT;
     speed = SPEED_DEFAULT;
     taps = TAPS_DEFAULT;
@@ -112,6 +113,10 @@
 
 - (float)getSpeed {
     return speed;
+}
+
+- (int)getRemovedBlocks {
+    return removedBlocks;
 }
 
 #pragma mark mechanics
@@ -222,6 +227,7 @@
     // remove blocks
     for (NSValue *value in similarCell) {
         [boardItems setObjectValue:@"" atRow:value.CGPointValue.y andColumn:value.CGPointValue.x];
+        removedBlocks++;
     }
 
     [self calculateScoreWithCellCount:[similarCell count]];
