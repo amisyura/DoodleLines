@@ -56,7 +56,7 @@
 - (float) getSpeed;
 
 // Mechanics
-- (void) restructureBoardItemsWithCellsCoords: (NSNumber *) cellsCoords;
+- (void) restructureBoardItemsWithCellsCoords: (NSMutableSet *) cellsCoords;
 - (void) pushLineIntoBoardItems: (NSArray *) items;
 - (void) generatePreviewItemElement;
 - (NSArray *) generateLineWithElementCount: (int) count;

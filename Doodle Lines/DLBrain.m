@@ -116,7 +116,7 @@
 
 #pragma mark mechanics
 
-- (void)restructureBoardItemsWithCells:(NSNumber *)cellsCoords {
+- (void)restructureBoardItemsWithCells:(NSMutableSet *)cellsCoords {
     NSMutableSet *columnsForCheck = [[NSMutableSet alloc] init];
     for (NSValue *value in cellsCoords) {
         NSNumber *column = [NSNumber numberWithInteger:[value CGPointValue].x];
