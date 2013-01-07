@@ -10,9 +10,11 @@
 #import "BoardView.h"
 #import "PreviewBoardView.h"
 #import "DLBrain.h"
+#import "CoachMarkController.h"
 
-@interface DLViewController : UIViewController <DLBrainDelegate, BoardViewDelegate> {
+@interface DLViewController : UIViewController <DLBrainDelegate, BoardViewDelegate, CoachMarkControllerDelegate> {
     BOOL gameStarted;
+    CoachMarkController *coachController;
 }
 @property (strong, nonatomic) IBOutlet UIButton *buttonStartStop;
 @property (strong, nonatomic) IBOutlet UILabel *labelScore;
@@ -28,6 +30,9 @@
 @property (strong, nonatomic) NSTimer *timerBoardPreview;
 
 - (IBAction) startStopGame:(id)sender;
+
+- (void) setCoachController: (CoachMarkController *) value;
+- (CoachMarkController *) coachController;
 
 
 @end

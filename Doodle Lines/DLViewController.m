@@ -8,6 +8,7 @@
 
 #import "DLViewController.h"
 
+
 @implementation DLViewController
 
 @synthesize labelScore, labelScoreValue, labelTaps, labelTapsValue, buttonStartStop;
@@ -51,6 +52,19 @@
     [self.board setNeedsDisplay];
 }
 
+- (void) setCoachController: (CoachMarkController *) value {
+    coachController = value;
+}
+
+- (CoachMarkController *) coachController {
+    if (!coachController) {
+        coachController = [[CoachMarkController alloc] initWithNibName:nil bundle:nil];
+        coachController.delegate = self;
+    }
+    
+    return coachController;
+}
+
 #pragma mark IBAction`s
 
 - (IBAction) startStopGame:(id)sender {
@@ -58,6 +72,10 @@
         gameStarted = YES;
         [sender setImage:[UIImage imageNamed:@"stop-button.png"] forState:UIControlStateNormal];
         [self brainSppedChanged:[self.brain getSpeed]];
+        
+        if (self.coachController) {
+            self.coachController = nil;
+        }
     } else {
         gameStarted = NO;
         [sender setImage:[UIImage imageNamed:@"start-button.png"] forState:UIControlStateNormal];
@@ -66,6 +84,9 @@
         self.labelScoreValue.text = [NSString stringWithFormat:@"%i", [self.brain getScores]];
         self.labelTapsValue.text = [NSString stringWithFormat:@"%i", [self.brain getTaps]];
         self.labelSpeedValue.text = [NSString stringWithFormat:@"%f", [self.brain getSpeed]];
+        
+        [self.view addSubview:self.coachController.view];
+        [self.coachController showPause];
     }
 }
 
@@ -85,24 +106,34 @@
     [self.board setNeedsDisplay];
 }
 
-- (void) brainBoardIsFull:(NSArray *)boardItems {
-    gameStarted = NO;
-    [self.buttonStartStop setImage:[UIImage imageNamed:@"start-button.png"] forState:UIControlStateNormal];
-    [self.timerBoardPreview invalidate];
-    [self.brain reset];
-}
-
 - (void) brainSppedChanged:(float)speed {
     float interval = 1.0f - speed;
     [self initializationTimerWithInterval:interval];
     self.labelSpeedValue.text = [NSString stringWithFormat:@"%f", speed];
 }
 
+- (void) brainBoardIsFull:(NSArray *)boardItems {
+    gameStarted = NO;
+    [self.buttonStartStop setImage:[UIImage imageNamed:@"start-button.png"] forState:UIControlStateNormal];
+    
+    [self.view addSubview:self.coachController.view];
+    [coachController showResultWithBoard:self.brain andMessage:@""];
+    
+    [self.timerBoardPreview invalidate];
+    [self.brain reset];
+    self.board.board = self.brain.getBoardItems;
+}
+
 - (void)brainTapIsEnd {
     gameStarted = NO;
     [self.buttonStartStop setImage:[UIImage imageNamed:@"start-button.png"] forState:UIControlStateNormal];
+    
+    [self.view addSubview:self.coachController.view];
+    [coachController showResultWithBoard:self.brain andMessage:@"Out of taps..."];
+    
     [self.timerBoardPreview invalidate];
     [self.brain reset];
+    self.board.board = self.brain.getBoardItems;
 }
 
 - (void) boardViewTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -125,6 +156,10 @@
         [self.brain tapDecrement];
         [self.labelTapsValue setText:[NSString stringWithFormat:@"%i", [self.brain getTaps]]];
     }
+}
+
+- (void) coachMarkControllerTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.buttonStartStop sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark support methods

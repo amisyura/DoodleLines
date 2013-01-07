@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB3A5D66632796726F1C866C /* QuartzCore in Resources */ = {isa = PBXBuildFile; fileRef = CB3A5442742DB14B43E629EA /* QuartzCore */; };
+		CB110444169A043F00D589CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF9B79E1694A9D400E1B64E /* QuartzCore.framework */; };
+		CB27627F169B28EC0060D89B /* CoachMarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB27627D169B28EC0060D89B /* CoachMarkController.m */; };
+		CB276280169B28EC0060D89B /* CoachMarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB27627E169B28EC0060D89B /* CoachMarkController.xib */; };
+		CB276282169B2FBC0060D89B /* touch_up.png in Resources */ = {isa = PBXBuildFile; fileRef = CB276281169B2FBC0060D89B /* touch_up.png */; };
 		CB548ED616942B2C0088B7FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB548ED516942B2C0088B7FA /* UIKit.framework */; };
 		CB548ED816942B2C0088B7FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB548ED716942B2C0088B7FA /* Foundation.framework */; };
 		CB548EDA16942B2C0088B7FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB548ED916942B2C0088B7FA /* CoreGraphics.framework */; };
@@ -37,28 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CB3A503BB26DCF3232FC3CF7 /* CATransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransaction.h; sourceTree = "<group>"; };
-		CB3A533F58CF00813F94E1E5 /* CABase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CABase.h; sourceTree = "<group>"; };
-		CB3A5442742DB14B43E629EA /* QuartzCore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuartzCore; sourceTree = "<group>"; };
-		CB3A54FC0CD2137E8711DA95 /* CAEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEAGLLayer.h; sourceTree = "<group>"; };
-		CB3A55CD932FF244C3E38D43 /* CATiledLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATiledLayer.h; sourceTree = "<group>"; };
-		CB3A56A75FD0A0EA24C7A4D9 /* CAMediaTimingFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMediaTimingFunction.h; sourceTree = "<group>"; };
-		CB3A57072016523FB075D27D /* CAValueFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAValueFunction.h; sourceTree = "<group>"; };
-		CB3A585CCED5737F26E2CB7E /* CAEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayer.h; sourceTree = "<group>"; };
-		CB3A58D5F6922888F9422E03 /* CAReplicatorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAReplicatorLayer.h; sourceTree = "<group>"; };
-		CB3A593678F5EAB461390B02 /* CAScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAScrollLayer.h; sourceTree = "<group>"; };
-		CB3A5965515C53222357D5E6 /* QuartzCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzCore.h; sourceTree = "<group>"; };
-		CB3A59D180AA4DAE576E95E4 /* CAEmitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEmitterCell.h; sourceTree = "<group>"; };
-		CB3A5A253DC7CD37B2D2CF99 /* CAAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAnimation.h; sourceTree = "<group>"; };
-		CB3A5B2F3552FA19AEFE0616 /* CAMediaTiming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMediaTiming.h; sourceTree = "<group>"; };
-		CB3A5B382B059872E694AF1B /* CADisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADisplayLink.h; sourceTree = "<group>"; };
-		CB3A5B40C4746D4EDF790190 /* CATextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATextLayer.h; sourceTree = "<group>"; };
-		CB3A5C7383C06FBF0A4FEF69 /* CALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALayer.h; sourceTree = "<group>"; };
-		CB3A5CBA589C20669E8600A8 /* CoreAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimation.h; sourceTree = "<group>"; };
-		CB3A5CE8E079718739070CB2 /* CAShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayer.h; sourceTree = "<group>"; };
-		CB3A5D3240F1DB0D1A9B57D1 /* CATransform3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3D.h; sourceTree = "<group>"; };
-		CB3A5DA9DB38DCB63FEC9F1A /* CATransformLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransformLayer.h; sourceTree = "<group>"; };
-		CB3A5F5106486FA0892A5179 /* CAGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAGradientLayer.h; sourceTree = "<group>"; };
+		CB27627C169B28EC0060D89B /* CoachMarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkController.h; sourceTree = "<group>"; };
+		CB27627D169B28EC0060D89B /* CoachMarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkController.m; sourceTree = "<group>"; };
+		CB27627E169B28EC0060D89B /* CoachMarkController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoachMarkController.xib; sourceTree = "<group>"; };
+		CB276281169B2FBC0060D89B /* touch_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_up.png; sourceTree = "<group>"; };
 		CB548ED116942B2C0088B7FA /* Doodle Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doodle Lines.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB548ED516942B2C0088B7FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB548ED716942B2C0088B7FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB110444169A043F00D589CB /* QuartzCore.framework in Frameworks */,
 				CB548ED616942B2C0088B7FA /* UIKit.framework in Frameworks */,
 				CB548ED816942B2C0088B7FA /* Foundation.framework in Frameworks */,
 				CB548EDA16942B2C0088B7FA /* CoreGraphics.framework in Frameworks */,
@@ -112,47 +98,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB3A5D4DA0B542BD3B137057 /* Headers */ = {
+		CB0926DE1698BFF900898AC6 /* Board */ = {
 			isa = PBXGroup;
 			children = (
-				CB3A5A253DC7CD37B2D2CF99 /* CAAnimation.h */,
-				CB3A533F58CF00813F94E1E5 /* CABase.h */,
-				CB3A5B382B059872E694AF1B /* CADisplayLink.h */,
-				CB3A54FC0CD2137E8711DA95 /* CAEAGLLayer.h */,
-				CB3A59D180AA4DAE576E95E4 /* CAEmitterCell.h */,
-				CB3A585CCED5737F26E2CB7E /* CAEmitterLayer.h */,
-				CB3A5F5106486FA0892A5179 /* CAGradientLayer.h */,
-				CB3A5C7383C06FBF0A4FEF69 /* CALayer.h */,
-				CB3A5B2F3552FA19AEFE0616 /* CAMediaTiming.h */,
-				CB3A56A75FD0A0EA24C7A4D9 /* CAMediaTimingFunction.h */,
-				CB3A58D5F6922888F9422E03 /* CAReplicatorLayer.h */,
-				CB3A593678F5EAB461390B02 /* CAScrollLayer.h */,
-				CB3A5CE8E079718739070CB2 /* CAShapeLayer.h */,
-				CB3A5B40C4746D4EDF790190 /* CATextLayer.h */,
-				CB3A55CD932FF244C3E38D43 /* CATiledLayer.h */,
-				CB3A503BB26DCF3232FC3CF7 /* CATransaction.h */,
-				CB3A5D3240F1DB0D1A9B57D1 /* CATransform3D.h */,
-				CB3A5DA9DB38DCB63FEC9F1A /* CATransformLayer.h */,
-				CB3A57072016523FB075D27D /* CAValueFunction.h */,
-				CB3A5CBA589C20669E8600A8 /* CoreAnimation.h */,
-				CB3A5965515C53222357D5E6 /* QuartzCore.h */,
+				CBF9B77C169431DD00E1B64E /* Abstract */,
+				CBF9B77D1694323100E1B64E /* BoardView.h */,
+				CBF9B77E1694323100E1B64E /* BoardView.m */,
+				CBF9B7801694326900E1B64E /* PreviewBoardView.h */,
+				CBF9B7811694326900E1B64E /* PreviewBoardView.m */,
 			);
-			path = Headers;
+			name = Board;
 			sourceTree = "<group>";
 		};
-		CB3A5FE7E620B97A9F6F8ED4 /* QuartzCore.framework */ = {
+		CB3A54E94081AB516B14645D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CB3A5D4DA0B542BD3B137057 /* Headers */,
-				CB3A5442742DB14B43E629EA /* QuartzCore */,
 			);
-			path = QuartzCore.framework;
+			name = View;
 			sourceTree = "<group>";
 		};
 		CB548EC616942B2C0088B7FA = {
 			isa = PBXGroup;
 			children = (
-				CBF9B79E1694A9D400E1B64E /* QuartzCore.framework */,
 				CB548EDB16942B2C0088B7FA /* Doodle Lines */,
 				CB548ED416942B2C0088B7FA /* Frameworks */,
 				CB548ED216942B2C0088B7FA /* Products */,
@@ -170,10 +137,10 @@
 		CB548ED416942B2C0088B7FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBF9B79E1694A9D400E1B64E /* QuartzCore.framework */,
 				CB548ED516942B2C0088B7FA /* UIKit.framework */,
 				CB548ED716942B2C0088B7FA /* Foundation.framework */,
 				CB548ED916942B2C0088B7FA /* CoreGraphics.framework */,
-				CB3A5FE7E620B97A9F6F8ED4 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				CB548EFA16942B670088B7FA /* Controllers */,
+				CB3A54E94081AB516B14645D /* View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -226,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				CB548EF016942B2C0088B7FA /* DLViewController.xib */,
+				CB27627E169B28EC0060D89B /* CoachMarkController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +204,8 @@
 			children = (
 				CB548EED16942B2C0088B7FA /* DLViewController.h */,
 				CB548EEE16942B2C0088B7FA /* DLViewController.m */,
+				CB27627C169B28EC0060D89B /* CoachMarkController.h */,
+				CB27627D169B28EC0060D89B /* CoachMarkController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -242,6 +213,7 @@
 		CB548EFC16942B960088B7FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB276281169B2FBC0060D89B /* touch_up.png */,
 				CBF9B7A01694D0A600E1B64E /* background.png */,
 				CB548F0216942BD30088B7FA /* blue.png */,
 				CB548F0316942BD30088B7FA /* green.png */,
@@ -296,11 +268,7 @@
 		CBF9B7881694396100E1B64E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CBF9B77C169431DD00E1B64E /* Abstract */,
-				CBF9B77D1694323100E1B64E /* BoardView.h */,
-				CBF9B77E1694323100E1B64E /* BoardView.m */,
-				CBF9B7801694326900E1B64E /* PreviewBoardView.h */,
-				CBF9B7811694326900E1B64E /* PreviewBoardView.m */,
+				CB0926DE1698BFF900898AC6 /* Board */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -372,7 +340,8 @@
 				CB548F1016942BD30088B7FA /* stop-button.png in Resources */,
 				CB548F1116942BD30088B7FA /* yellow.png in Resources */,
 				CBF9B7A11694D0A600E1B64E /* background.png in Resources */,
-				CB3A5D66632796726F1C866C /* QuartzCore in Resources */,
+				CB276280169B28EC0060D89B /* CoachMarkController.xib in Resources */,
+				CB276282169B2FBC0060D89B /* touch_up.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +360,7 @@
 				CBF9B7821694326900E1B64E /* PreviewBoardView.m in Sources */,
 				CBF9B78B1694398C00E1B64E /* DLBrain.m in Sources */,
 				CBF9B79516944C7C00E1B64E /* NSMutableArray+MultidimensionalAdditions.m in Sources */,
+				CB27627F169B28EC0060D89B /* CoachMarkController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

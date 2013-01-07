@@ -156,7 +156,7 @@
         }
 
         if (emptyColCount == CELL_COUNT_Y && x > 0 && x < (CELL_COUNT_Y - 1) ) {
-            NSLog(@"drop column %i!!", x);
+//            NSLog(@"drop column %i!!", x);
             for (int j = 0; j < CELL_COUNT_Y; j++) {
                 NSMutableArray *currentLine = [boardItems objectAtIndex:j];
                 [currentLine removeObjectAtIndex:x];
