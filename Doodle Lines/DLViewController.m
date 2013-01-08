@@ -80,14 +80,15 @@
         gameStarted = NO;
         [sender setImage:[UIImage imageNamed:@"start-button.png"] forState:UIControlStateNormal];
         [self.timerBoardPreview invalidate];
-
-        self.labelScoreValue.text = [NSString stringWithFormat:@"%i", [self.brain getScores]];
-        self.labelTapsValue.text = [NSString stringWithFormat:@"%i", [self.brain getTaps]];
-        self.labelSpeedValue.text = [NSString stringWithFormat:@"%f", [self.brain getSpeed]];
         
         [self.view addSubview:self.coachController.view];
         [self.coachController showPause];
     }
+
+    // Set labels value
+    self.labelScoreValue.text = [NSString stringWithFormat:@"%i", [self.brain getScores]];
+    self.labelTapsValue.text = [NSString stringWithFormat:@"%i", [self.brain getTaps]];
+    self.labelSpeedValue.text = [NSString stringWithFormat:@"%f", [self.brain getSpeed]];
 }
 
 #pragma mark adoptiong delegates
