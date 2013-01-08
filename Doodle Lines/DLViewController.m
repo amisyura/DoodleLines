@@ -144,6 +144,10 @@
         // Flip Y-coord
         int cellY = (touchLocation.y / CELL_HEIGHT - CELL_COUNT_Y) * (-1);
         int cellX = touchLocation.x / CELL_WIDTH;
+        // Checking coords
+        if (cellX > (CELL_COUNT_X - 1)) cellX = (CELL_COUNT_X - 1);
+        if (cellY > (CELL_COUNT_Y - 1)) cellY = (CELL_COUNT_Y - 1);
+
 //        NSLog(@"%i %i", cellX, cellY);
 
         if ([self.brain similarCellsWithCoordinateX:cellX andY:cellY]) {
