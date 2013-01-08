@@ -19,6 +19,8 @@
 @synthesize delegate;
 @synthesize labelTitle, labelNotice;
 @synthesize labelBlocks, labelScores, labelTime, labelBlocksValue, labelScoreValue, labelTimeValue;
+@synthesize viewButtons, viewClickNotifier;
+@synthesize buttonRetry, buttonMainMenu;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +34,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    gameEnded = NO;
+
     endAlpha = self.view.alpha;
 //    self.view.hidden = YES;
     self.view.alpha = 0.0f;
@@ -49,18 +53,35 @@
     self.labelBlocksValue.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
     self.labelScoreValue.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
     self.labelTimeValue.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
+
+    self.buttonRetry.titleLabel.font = [UIFont fontWithName:@"Architects Daughter" size: 18];
+    self.buttonMainMenu.titleLabel.font = [UIFont fontWithName:@"Architects Daughter" size: 18];
+
+    self.viewResult.hidden = YES;
+    self.viewButtons.hidden = YES;
+    self.viewClickNotifier.hidden = YES;
     
     [self fadeInWithDuration:0.3f andDelay:0];
 }
 
 - (void) showPause {
+    gameEnded = NO;
+
     self.viewResult.hidden = YES;
+    self.viewButtons.hidden = YES;
+    self.viewClickNotifier.hidden = NO;
+
     self.labelTitle.text = @"Pause";
     self.labelMessage.text = @"";
 }
 
 - (void) showResultWithBoard:(DLBrain *) brain andMessage:(NSString *)message {
+    gameEnded = YES;
+
     self.viewResult.hidden = NO;
+    self.viewButtons.hidden = NO;
+    self.viewClickNotifier.hidden = YES;
+
     self.labelTitle.text = @"Game over!";
     self.labelMessage.text = message;
     
@@ -88,6 +109,8 @@
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (gameEnded) return; // Disabled screen tap if game ended!
+
     [self fadeOutWithDuration:0.3f andDelay:0];
     
     [self.delegate coachMarkControllerTouchesEnded:touches withEvent:event];
@@ -97,6 +120,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction) retryGame:(id)sender {
+    if (self.delegate) {
+        [self.delegate coachMarkControllerGameRetry];
+    }
+
+    gameEnded = NO;
+    [self fadeOutWithDuration:0.3f andDelay:0];
+}
+
+- (IBAction) backToMainMenu:(id)sender {
+    if (self.delegate) {
+        [self.delegate coachMarkControllerBackToMainMenu];
+    }
+
 }
 
 - (void)viewDidUnload {
@@ -112,6 +151,10 @@
     [self setLabelTimeValue:nil];
     [self setViewResult:nil];
     [self setLabelMessage:nil];
+    [self setViewClickNotifier:nil];
+    [self setViewButtons:nil];
+    [self setButtonRetry:nil];
+    [self setButtonMainMenu:nil];
     [super viewDidUnload];
 }
 @end

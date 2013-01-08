@@ -14,10 +14,16 @@
 @protocol CoachMarkControllerDelegate <NSObject>
 
 - (void) coachMarkControllerTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void) coachMarkControllerGameRetry;
+
+@optional
+- (void) coachMarkControllerBackToMainMenu;
 
 @end
 
-@interface CoachMarkController : UIViewController
+@interface CoachMarkController : UIViewController  {
+    BOOL gameEnded;
+}
 
 @property (assign, nonatomic) id <CoachMarkControllerDelegate> delegate;
 
@@ -35,7 +41,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelBlocksValue;
 @property (strong, nonatomic) IBOutlet UILabel *labelTimeValue;
 
+@property (strong, nonatomic) IBOutlet UIView *viewClickNotifier;
+@property (strong, nonatomic) IBOutlet UIView *viewButtons;
+
+@property (strong, nonatomic) IBOutlet UIButton *buttonRetry;
+@property (strong, nonatomic) IBOutlet UIButton *buttonMainMenu;
+
+
 - (void) showPause;
 - (void) showResultWithBoard: (DLBrain *) brain andMessage: (NSString *) message;
+
+- (IBAction) retryGame:(id)sender;
+- (IBAction) backToMainMenu:(id)sender;
 
 @end

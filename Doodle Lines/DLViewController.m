@@ -166,6 +166,18 @@
     [self.buttonStartStop sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void) coachMarkControllerGameRetry {
+    [self.brain reset];
+    
+    gameStarted = NO;
+    self.board.board = [self.brain getBoardItems];
+    self.previewBoard.board = [self.brain getPreviewBoardItems];
+    [self.board setNeedsDisplay];
+    [self.previewBoard setNeedsDisplay];
+    
+    [self.buttonStartStop sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
 #pragma mark support methods
 - (void) initializationTimerWithInterval: (float) interval {
     [self.timerBoardPreview invalidate];
