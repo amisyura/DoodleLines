@@ -99,10 +99,10 @@
 }
 
 - (void) brainPreviewBoardIsFull:(NSArray *)previewBoardItems {
+    if (gameStarted == NO) return;
     // WARNING: Return multiple array!!
     [self.brain pushLineIntoBoardItems:[previewBoardItems objectAtIndex:0]];
     self.board.board = [self.brain getBoardItems];
-    
     [self.board setNeedsDisplay];
 }
 
@@ -120,8 +120,8 @@
     [coachController showResultWithBoard:self.brain andMessage:@""];
     
     [self.timerBoardPreview invalidate];
-    [self.brain reset];
-    self.board.board = self.brain.getBoardItems;
+//    [self.brain reset];
+//    self.board.board = self.brain.getBoardItems;
 }
 
 - (void)brainTapIsEnd {
@@ -132,8 +132,8 @@
     [coachController showResultWithBoard:self.brain andMessage:@"Out of taps..."];
     
     [self.timerBoardPreview invalidate];
-    [self.brain reset];
-    self.board.board = self.brain.getBoardItems;
+//    [self.brain reset];
+//    self.board.board = self.brain.getBoardItems;
 }
 
 - (void) boardViewTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

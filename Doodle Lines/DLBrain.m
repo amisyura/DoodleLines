@@ -192,6 +192,10 @@
     }
     
     [boardItems setObject:items atIndexedSubscript:0];
+
+    // Clear preview board
+    previewBoardItems = nil;
+    previewBoardItems = [[NSMutableArray alloc] init];
 }
 
 - (NSString *) generateRandomElement {
@@ -203,9 +207,8 @@
         if (self.delegate) {
             [self.delegate brainPreviewBoardIsFull:[self getPreviewBoardItems]];
         }
-        
-        previewBoardItems = nil;
-        previewBoardItems = [[NSMutableArray alloc] init];
+
+        return;
     }
     
     [previewBoardItems addObject:[self generateRandomElement]];
