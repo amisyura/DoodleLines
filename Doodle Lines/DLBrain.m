@@ -59,37 +59,37 @@
     boardItems = nil;
     boardItems = [NSMutableArray arrayOfRows:CELL_COUNT_Y andColumns:CELL_COUNT_X];
 
-    //for test
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < [[boardItems objectAtIndex:i] count]; j++) {
             [boardItems setObjectValue:[self generateRandomElement] atRow:i andColumn:j];
         }
     }
 
-//    [boardItems setObjectValue:@"red" atRow:0 andColumn:7];
-//    [boardItems setObjectValue:@"red" atRow:0 andColumn:6];
-//    [boardItems setObjectValue:@"red" atRow:1 andColumn:6];
-//
-//    [boardItems setObjectValue:@"green" atRow:0 andColumn:7];
-//    [boardItems setObjectValue:@"green" atRow:1 andColumn:7];
-//    [boardItems setObjectValue:@"green" atRow:2 andColumn:7];
+    /*
+    [boardItems setObjectValue:@"red" atRow:0 andColumn:8];
+    [boardItems setObjectValue:@"red" atRow:1 andColumn:8];
+    [boardItems setObjectValue:@"red" atRow:0 andColumn:7];
 
-//    [boardItems setObjectValue:@"yellow" atRow:0 andColumn:8];
-//    [boardItems setObjectValue:@"yellow" atRow:1 andColumn:8];
-//    [boardItems setObjectValue:@"yellow" atRow:2 andColumn:8];
-//
-//    [boardItems setObjectValue:@"green" atRow:0 andColumn:9];
-//    [boardItems setObjectValue:@"green" atRow:1 andColumn:9];
-//    [boardItems setObjectValue:@"green" atRow:2 andColumn:9];
-//
-//    [boardItems setObjectValue:@"red" atRow:0 andColumn:4];
-//    [boardItems setObjectValue:@"red" atRow:1 andColumn:4];
-//    [boardItems setObjectValue:@"red" atRow:2 andColumn:4];
-//
-//    [boardItems setObjectValue:@"purple" atRow:0 andColumn:5];
-//    [boardItems setObjectValue:@"purple" atRow:1 andColumn:5];
-//    [boardItems setObjectValue:@"purple" atRow:2 andColumn:5];
+    [boardItems setObjectValue:@"green" atRow:0 andColumn:1];
+    [boardItems setObjectValue:@"green" atRow:0 andColumn:2];
+    [boardItems setObjectValue:@"green" atRow:0 andColumn:3];
 
+    [boardItems setObjectValue:@"yellow" atRow:0 andColumn:4];
+    [boardItems setObjectValue:@"yellow" atRow:0 andColumn:5];
+    [boardItems setObjectValue:@"yellow" atRow:0 andColumn:6];
+
+    [boardItems setObjectValue:@"green" atRow:0 andColumn:9];
+    [boardItems setObjectValue:@"green" atRow:1 andColumn:9];
+    [boardItems setObjectValue:@"green" atRow:2 andColumn:9];
+
+    [boardItems setObjectValue:@"red" atRow:1 andColumn:4];
+    [boardItems setObjectValue:@"red" atRow:2 andColumn:4];
+    [boardItems setObjectValue:@"red" atRow:3 andColumn:4];
+
+    [boardItems setObjectValue:@"purple" atRow:1 andColumn:5];
+    [boardItems setObjectValue:@"purple" atRow:3 andColumn:5];
+    [boardItems setObjectValue:@"purple" atRow:2 andColumn:5];
+    */
 }
 
 
@@ -123,11 +123,14 @@
 
 - (void)restructureBoardItemsWithCells:(NSMutableSet *)cellsCoords {
     NSMutableSet *columnsForCheck = [[NSMutableSet alloc] init];
+
+    // Get X-coord
     for (NSValue *value in cellsCoords) {
         NSNumber *column = [NSNumber numberWithInteger:[value CGPointValue].x];
         [columnsForCheck addObject:column];
     }
 
+    // Replace values Y-axis
     for (NSNumber *column in columnsForCheck) {
         int x = [column integerValue];
         for (int y = 0; y < CELL_COUNT_Y; y++) {
@@ -144,24 +147,28 @@
         }
     }
 
-    // Сдвиг!!
+    // Replace values X-axis
+    for (NSNumber *column in columnsForCheck)    // temporary hack
     for (NSNumber *column in columnsForCheck) {
         int x = [column integerValue];
         int emptyColCount = 0;
         for (int y = 0; y < CELL_COUNT_Y; y++) {
             NSString *currentRow = [boardItems objectAtRow:y andColumn:x];
-            if ( currentRow == @"" || ![currentRow isKindOfClass:[NSString class]]) {
+            if ( currentRow == @"" || currentRow == [NSNull null]) {
                 emptyColCount++;
             }
         }
 
-        if (emptyColCount == CELL_COUNT_Y && x > 0 && x < (CELL_COUNT_Y - 1) ) {
-//            NSLog(@"drop column %i!!", x);
+//        NSLog(@"%i empty: %i", x, emptyColCount);
+
+        if (emptyColCount == CELL_COUNT_Y && x > 0 && x < CELL_COUNT_X ) {
             for (int j = 0; j < CELL_COUNT_Y; j++) {
                 NSMutableArray *currentLine = [boardItems objectAtIndex:j];
+//                if (j < 3) NSLog(@"%i %i: %@", x, j, currentLine);
                 [currentLine removeObjectAtIndex:x];
+//                if (j < 3) NSLog(@"%i %i: %@", x, j, currentLine);
 
-                if ( x < (CELL_COUNT_Y / 2)) {
+                if ( x < (int) (CELL_COUNT_Y / 2)) {
                     NSMutableArray *newLine = [NSMutableArray arrayWithObject:@""];
                     [newLine addObjectsFromArray:currentLine];
                     [boardItems setObject:newLine atIndexedSubscript:j];
@@ -171,9 +178,9 @@
                     [boardItems setObject:newLine atIndexedSubscript:j];
                 }
             }
+        } else{
+//            NSLog(@"%i == %i && %i > 0 && %i < %i", emptyColCount, CELL_COUNT_Y, x, x, CELL_COUNT_X);
         }
-
-//        NSLog(@"empty for %i count: %i", x, emptyColCount);
     }
 }
 
@@ -217,7 +224,9 @@
 - (BOOL) similarCellsWithCoordinateX:(int)x andY:(int)y {
     NSString *cellValue = [boardItems objectAtRow:y andColumn:x];
 
-    if (![cellValue isKindOfClass:[NSString class]]) return NO;
+    if (![cellValue isKindOfClass:[NSString class]] || cellValue == @"") return NO;
+    
+    [self tapDecrement];
 
     // Searching similar blocks
     similarCell = nil;
@@ -282,7 +291,6 @@
     scores += count * bonus;
     subtotalScores += count * bonus;
     if (subtotalScores >= SCORE_RANGE) {
-        NSLog(@"nulls %i > $i", subtotalScores, SCORE_RANGE);
         subtotalScores = subtotalScores - SCORE_RANGE;
         subtotalSpeed = SUBTOTAL_SPEED_DEFAULT;
         taps += TAPS_DEFAULT;

@@ -157,7 +157,6 @@
         }
 
         // Tap setting
-        [self.brain tapDecrement];
         [self.labelTapsValue setText:[NSString stringWithFormat:@"%i", [self.brain getTaps]]];
     }
 }
