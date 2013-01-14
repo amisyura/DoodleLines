@@ -11,8 +11,9 @@
 #import "PreviewBoardView.h"
 #import "DLBrain.h"
 #import "CoachMarkController.h"
+#import "AbstractController.h"
 
-@interface DLViewController : UIViewController <DLBrainDelegate, BoardViewDelegate, CoachMarkControllerDelegate> {
+@interface DLViewController : AbstractController <DLBrainDelegate, BoardViewDelegate, CoachMarkControllerDelegate> {
     BOOL gameStarted;
     CoachMarkController *coachController;
 }

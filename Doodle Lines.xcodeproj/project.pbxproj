@@ -11,6 +11,8 @@
 		CB27627F169B28EC0060D89B /* CoachMarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB27627D169B28EC0060D89B /* CoachMarkController.m */; };
 		CB276280169B28EC0060D89B /* CoachMarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB27627E169B28EC0060D89B /* CoachMarkController.xib */; };
 		CB276282169B2FBC0060D89B /* touch_up.png in Resources */ = {isa = PBXBuildFile; fileRef = CB276281169B2FBC0060D89B /* touch_up.png */; };
+		CB49C112169C89D7007A5986 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49C110169C89D7007A5986 /* MainViewController.m */; };
+		CB49C113169C89D7007A5986 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB49C111169C89D7007A5986 /* MainViewController.xib */; };
 		CB548ED616942B2C0088B7FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB548ED516942B2C0088B7FA /* UIKit.framework */; };
 		CB548ED816942B2C0088B7FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB548ED716942B2C0088B7FA /* Foundation.framework */; };
 		CB548EDA16942B2C0088B7FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB548ED916942B2C0088B7FA /* CoreGraphics.framework */; };
@@ -31,6 +33,7 @@
 		CB548F0F16942BD30088B7FA /* start-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CB548F0716942BD30088B7FA /* start-button.png */; };
 		CB548F1016942BD30088B7FA /* stop-button.png in Resources */ = {isa = PBXBuildFile; fileRef = CB548F0816942BD30088B7FA /* stop-button.png */; };
 		CB548F1116942BD30088B7FA /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB548F0916942BD30088B7FA /* yellow.png */; };
+		CB6CC9FB16A302E20059AF6C /* AbstractController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CC9FA16A302E20059AF6C /* AbstractController.m */; };
 		CBF9B77B16942F7600E1B64E /* AbstractRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B77A16942F7600E1B64E /* AbstractRectView.m */; };
 		CBF9B77F1694323100E1B64E /* BoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B77E1694323100E1B64E /* BoardView.m */; };
 		CBF9B7821694326900E1B64E /* PreviewBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B7811694326900E1B64E /* PreviewBoardView.m */; };
@@ -44,6 +47,9 @@
 		CB27627D169B28EC0060D89B /* CoachMarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkController.m; sourceTree = "<group>"; };
 		CB27627E169B28EC0060D89B /* CoachMarkController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoachMarkController.xib; sourceTree = "<group>"; };
 		CB276281169B2FBC0060D89B /* touch_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touch_up.png; sourceTree = "<group>"; };
+		CB49C10F169C89D7007A5986 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CB49C110169C89D7007A5986 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CB49C111169C89D7007A5986 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		CB548ED116942B2C0088B7FA /* Doodle Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doodle Lines.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB548ED516942B2C0088B7FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB548ED716942B2C0088B7FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,6 +75,8 @@
 		CB548F0716942BD30088B7FA /* start-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-button.png"; sourceTree = "<group>"; };
 		CB548F0816942BD30088B7FA /* stop-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button.png"; sourceTree = "<group>"; };
 		CB548F0916942BD30088B7FA /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		CB6CC9F916A302E20059AF6C /* AbstractController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractController.h; sourceTree = "<group>"; };
+		CB6CC9FA16A302E20059AF6C /* AbstractController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractController.m; sourceTree = "<group>"; };
 		CBF9B77916942F7600E1B64E /* AbstractRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractRectView.h; sourceTree = "<group>"; };
 		CBF9B77A16942F7600E1B64E /* AbstractRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractRectView.m; sourceTree = "<group>"; };
 		CBF9B77D1694323100E1B64E /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 		CB548EFA16942B670088B7FA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB49C111169C89D7007A5986 /* MainViewController.xib */,
 				CB548EF016942B2C0088B7FA /* DLViewController.xib */,
 				CB27627E169B28EC0060D89B /* CoachMarkController.xib */,
 			);
@@ -202,10 +211,13 @@
 		CB548EFB16942B7E0088B7FA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB6CC9F716A302C90059AF6C /* Abstract */,
 				CB548EED16942B2C0088B7FA /* DLViewController.h */,
 				CB548EEE16942B2C0088B7FA /* DLViewController.m */,
 				CB27627C169B28EC0060D89B /* CoachMarkController.h */,
 				CB27627D169B28EC0060D89B /* CoachMarkController.m */,
+				CB49C10F169C89D7007A5986 /* MainViewController.h */,
+				CB49C110169C89D7007A5986 /* MainViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +245,15 @@
 				CB548EFE16942BB70088B7FA /* ArchitectsDaughter.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		CB6CC9F716A302C90059AF6C /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				CB6CC9F916A302E20059AF6C /* AbstractController.h */,
+				CB6CC9FA16A302E20059AF6C /* AbstractController.m */,
+			);
+			name = Abstract;
 			sourceTree = "<group>";
 		};
 		CBF9B76C16942E3D00E1B64E /* Models */ = {
@@ -342,6 +363,7 @@
 				CBF9B7A11694D0A600E1B64E /* background.png in Resources */,
 				CB276280169B28EC0060D89B /* CoachMarkController.xib in Resources */,
 				CB276282169B2FBC0060D89B /* touch_up.png in Resources */,
+				CB49C113169C89D7007A5986 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +383,8 @@
 				CBF9B78B1694398C00E1B64E /* DLBrain.m in Sources */,
 				CBF9B79516944C7C00E1B64E /* NSMutableArray+MultidimensionalAdditions.m in Sources */,
 				CB27627F169B28EC0060D89B /* CoachMarkController.m in Sources */,
+				CB49C112169C89D7007A5986 /* MainViewController.m in Sources */,
+				CB6CC9FB16A302E20059AF6C /* AbstractController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

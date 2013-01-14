@@ -19,19 +19,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.alpha = 0.3f;
+    
+    [UIView animateWithDuration:0.5f delay:0 options:0 animations:^{
+        self.view.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+        //        self.view.hidden = NO;
+    }];
     
     gameStarted = NO;
     
     // Labels
-    int labelFontSize = 19;
     UIColor *penColor = [UIColor colorWithRed:0.02 green:0.325 blue:1 alpha:1];
-    UIFont *font = [UIFont fontWithName:@"Architects Daughter" size:labelFontSize];
-    
-    // label font settings
-    self.labelScore.font = font; self.labelScore.textColor = penColor;
-    self.labelTaps.font = font; self.labelScoreValue.textColor = penColor;
-    self.labelScoreValue.font = font; self.labelTaps.textColor = penColor;
-    self.labelTapsValue.font = font; self.labelTapsValue.textColor = penColor;
     
     // View elements
     int width = self.view.frame.size.width;
@@ -50,6 +49,7 @@
 
     self.board.board = [self.brain getBoardItems];
     [self.board setNeedsDisplay];
+    
 }
 
 - (void) setCoachController: (CoachMarkController *) value {

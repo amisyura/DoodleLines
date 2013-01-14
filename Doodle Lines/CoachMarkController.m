@@ -38,24 +38,7 @@
     gameEnded = NO;
 
     endAlpha = self.view.alpha;
-//    self.view.hidden = YES;
     self.view.alpha = 0.0f;
-
-    self.labelTitle.font = [UIFont fontWithName:@"Architects Daughter" size: 36];
-    self.labelNotice.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-    
-    self.viewResult.hidden = YES;
-
-    self.labelMessage.font = [UIFont fontWithName:@"Architects Daughter" size: 16];
-    self.labelBlocks.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-    self.labelScores.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-    self.labelTime.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-    self.labelBlocksValue.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-    self.labelScoreValue.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-    self.labelTimeValue.font = [UIFont fontWithName:@"Architects Daughter" size: 14];
-
-    self.buttonRetry.titleLabel.font = [UIFont fontWithName:@"Architects Daughter" size: 18];
-    self.buttonMainMenu.titleLabel.font = [UIFont fontWithName:@"Architects Daughter" size: 18];
 
     self.viewResult.hidden = YES;
     self.viewButtons.hidden = YES;

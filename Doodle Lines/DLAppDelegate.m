@@ -8,16 +8,17 @@
 
 #import "DLAppDelegate.h"
 
-#import "DLViewController.h"
+//#import "DLViewController.h"
+#import "MainViewController.h"
 
 @implementation DLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[DLViewController alloc] initWithNibName:@"DLViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+
+    MainViewController *mainController = [[MainViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:mainController];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class DLViewController;
+@class MainViewController;
 
 @interface DLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) DLViewController *viewController;
+@property (strong, nonatomic) MainViewController *viewController;
 
 @end

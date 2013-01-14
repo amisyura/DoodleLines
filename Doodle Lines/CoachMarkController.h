@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DLBrain.h"
+#import "AbstractController.h"
 
 @class CoachMarkController;
 
@@ -21,7 +22,7 @@
 
 @end
 
-@interface CoachMarkController : UIViewController  {
+@interface CoachMarkController : AbstractController  {
     BOOL gameEnded;
 }
 
