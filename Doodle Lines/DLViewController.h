@@ -13,6 +13,8 @@
 #import "CoachMarkController.h"
 #import "AbstractController.h"
 
+extern NSString *const settingsShowHelp;
+
 @interface DLViewController : AbstractController <DLBrainDelegate, BoardViewDelegate, CoachMarkControllerDelegate> {
     BOOL gameStarted;
     CoachMarkController *coachController;
@@ -31,6 +33,7 @@
 @property (strong, nonatomic) NSTimer *timerBoardPreview;
 
 - (IBAction) startStopGame:(id)sender;
+- (IBAction) hideHelpScreen:(id)sender;
 
 - (void) setCoachController: (CoachMarkController *) value;
 - (CoachMarkController *) coachController;

@@ -8,26 +8,33 @@
 
 #import "DLViewController.h"
 
+@interface DLViewController() {
+    UIView *helpScreen;
+    BOOL showScreenFlag;
+}
+
+@end
 
 @implementation DLViewController
+
+NSString *const settingsShowHelp = @"settingsShowHelp";
 
 @synthesize labelScore, labelScoreValue, labelTaps, labelTapsValue, buttonStartStop;
 @synthesize board, previewBoard;
 
 #pragma mark initialization
 
++ (void) initialize {
+    NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
+    
+    [defaultValues setObject:[NSNumber numberWithBool:YES] forKey:settingsShowHelp];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.alpha = 0.3f;
-    
-    [UIView animateWithDuration:0.5f delay:0 options:0 animations:^{
-        self.view.alpha = 1.0f;
-    } completion:^(BOOL finished) {
-        //        self.view.hidden = NO;
-    }];
-    
-    gameStarted = NO;
     
     // Labels
     UIColor *penColor = [UIColor colorWithRed:0.02 green:0.325 blue:1 alpha:1];
@@ -50,6 +57,36 @@
     self.board.board = [self.brain getBoardItems];
     [self.board setNeedsDisplay];
     
+    // Set repeating backgound image
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"code.gif"]];
+    
+    // Show help screen
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    showScreenFlag = [userDefaults boolForKey:settingsShowHelp];
+    if (showScreenFlag) {
+        UIImageView *helpScreenImage = [[UIImageView alloc] initWithFrame:self.view.frame];
+        helpScreenImage.image = [UIImage imageNamed:@"help_screen.png"];
+        
+        helpScreen = [[UIView alloc] initWithFrame:self.view.frame];
+        helpScreen.alpha = 0.75f;
+        helpScreen.backgroundColor = [UIColor blackColor];
+        
+        [helpScreen addSubview:helpScreenImage];
+        [self.view addSubview:helpScreen];
+        
+        gameStarted = NO;
+    } else {
+        self.view.alpha = 0.3f;
+        
+        [UIView animateWithDuration:0.5f delay:0 options:0 animations:^{
+            self.view.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            //        self.view.hidden = NO;
+        }];
+
+        // Click start button
+        [self.buttonStartStop sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 - (void) setCoachController: (CoachMarkController *) value {
@@ -187,6 +224,20 @@
                                                             userInfo:nil
                                                              repeats:YES];
 }
+
+
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (showScreenFlag) {
+        [helpScreen removeFromSuperview];
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:NO forKey:settingsShowHelp];
+        [userDefaults synchronize];
+    }
+}
+
+
 
 #pragma mark memory management
 

@@ -17,6 +17,8 @@
     
     self.navigationController.navigationBarHidden = YES;
     [UIApplication sharedApplication].statusBarHidden = YES;
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"code.gif"]];
 }
 
 - (IBAction) startGame:(id)sender {
