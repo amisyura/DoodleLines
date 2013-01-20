@@ -56,7 +56,6 @@
         int rowCount = [self.board count];
         if (rowCount == 0) return;
 
-//        int padding = 1;
         int originX = paddingX;
         int originY = self.frame.size.height;
 
