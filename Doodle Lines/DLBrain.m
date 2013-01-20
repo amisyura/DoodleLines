@@ -13,6 +13,7 @@
 @interface DLBrain() {
     NSMutableSet *similarCell;
     int subtotalScores;
+    int lastBonus;
     float subtotalSpeed;
 }
 
@@ -52,6 +53,7 @@
     subtotalSpeed = SUBTOTAL_SPEED_DEFAULT;
     speed = SPEED_DEFAULT;
     taps = TAPS_DEFAULT;
+    lastBonus = 0;
     
     previewBoardItems = nil;
     previewBoardItems = [[NSMutableArray alloc] init];
@@ -154,7 +156,7 @@
         int emptyColCount = 0;
         for (int y = 0; y < CELL_COUNT_Y; y++) {
             NSString *currentRow = [boardItems objectAtRow:y andColumn:x];
-            if ( currentRow == @"" || currentRow == [NSNull null]) {
+            if ( currentRow == @"" || [currentRow isEqual:[NSNull null]]) {
                 emptyColCount++;
             }
         }
@@ -244,6 +246,10 @@
 
     [self calculateScoreWithCellCount:[similarCell count]];
     [self restructureBoardItemsWithCells:similarCell];
+    
+    if (lastBonus > 2) {
+        [self.delegate brainHasBonus:lastBonus withCellX:x andCellY:y];
+    }
 
     return YES;
 }
@@ -275,21 +281,21 @@
 }
 
 - (void) calculateScoreWithCellCount: (int) count {
-    int bonus = 2;
+    lastBonus = 2;
     if (count >= 5 && count < 7) {
-        bonus = 3;
+        lastBonus = 3;
     } else if (count >= 7 && count < 10) {
-        bonus = 4;
+        lastBonus = 4;
     } else if (count == 10) {
-        bonus = 5;
+        lastBonus = 5;
     } else if (count == 11) {
-        bonus = 6;
+        lastBonus = 6;
     } else if (count >= 12) {
-        bonus = 8;
+        lastBonus = 8;
     }
-
-    scores += count * bonus;
-    subtotalScores += count * bonus;
+    
+    scores += count * lastBonus;
+    subtotalScores += count * lastBonus;
     if (subtotalScores >= SCORE_RANGE) {
         subtotalScores = subtotalScores - SCORE_RANGE;
         subtotalSpeed = SUBTOTAL_SPEED_DEFAULT;

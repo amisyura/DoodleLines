@@ -27,6 +27,7 @@
 - (void) brainBoardIsFull: (NSArray *) boardItems;
 - (void) brainTapIsEnd;
 - (void) brainSppedChanged: (float) speed;
+- (void) brainHasBonus: (int) bonus withCellX: (int) cellX andCellY: (int) cellY;
 
 @end
 

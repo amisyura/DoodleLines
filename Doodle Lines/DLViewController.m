@@ -7,6 +7,7 @@
 //
 
 #import "DLViewController.h"
+#import "BoardBonusView.h"
 
 @interface DLViewController() {
     UIView *helpScreen;
@@ -172,6 +173,29 @@ NSString *const settingsShowHelp = @"settingsShowHelp";
     [self.timerBoardPreview invalidate];
 //    [self.brain reset];
 //    self.board.board = self.brain.getBoardItems;
+}
+
+
+// Bonus animation
+- (void) brainHasBonus:(int)bonus withCellX:(int)cellX andCellY:(int)cellY {
+    BOOL animateLeft = NO;
+    BOOL animateTop = NO;
+    
+    float coordX = self.board.frame.origin.x + (cellX * CELL_WIDTH);
+    float coordY = self.board.frame.size.height - (cellY * CELL_HEIGHT);
+    
+    if (coordX < self.board.frame.size.width / 2) {
+        animateLeft = YES;
+    }
+    
+    if (coordY < self.board.frame.size.height / 2) {
+        animateTop = YES;
+    }
+    
+    CGRect frame = CGRectMake(coordX, coordY, 30, 30);
+    BoardBonusView *bonusView = [[BoardBonusView alloc] initWithFrame:frame andBonus:bonus];
+    [self.view addSubview:bonusView];
+    [bonusView animateToLeft: animateLeft andTop:animateTop];
 }
 
 - (void) boardViewTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
