@@ -7,6 +7,10 @@
 //
 
 #import "DLBrain.h"
+#import "SimpleCellBlue.h"
+#import "SimpleCellGreen.h"
+#import "SimpleCellOrange.h"
+#import "SimpleCellRed.h"
 
 #define SUBTOTAL_SPEED_DEFAULT 0.1f
 
@@ -24,12 +28,10 @@
 - (id) init {
     if(self = [super init]) {
         boardElementsEnum = [[NSArray alloc] initWithObjects:
-                        @"blue",
-                        @"green",
-                        @"orange",
-//                        @"purple",
-                        @"red",
-//                        @"yellow",
+                        @"Blue",
+                        @"Green",
+                        @"Orange",
+                        @"Red",
                         nil];
         
         [self reset];
@@ -207,8 +209,11 @@
     previewBoardItems = [[NSMutableArray alloc] init];
 }
 
-- (NSString *) generateRandomElement {
-    return [boardElementsEnum objectAtIndex:(arc4random() % [boardElementsEnum count])];
+- (AbstractCellView *) generateRandomElement {
+    NSString *className = [NSString stringWithFormat:@"SimpleCell%@", [boardElementsEnum objectAtIndex:(arc4random() % [boardElementsEnum count])] ];
+    AbstractCellView *cell = [[NSClassFromString(className) alloc] init];
+    
+    return cell;
 }
 
 - (void) generatePreviewItemElement {

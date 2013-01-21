@@ -10,6 +10,11 @@
 #import "DLViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "SimpleCellBlue.h"
+#import "SimpleCellGreen.h"
+#import "SimpleCellOrange.h"
+#import "SimpleCellRed.h"
+
 @implementation MainViewController
 
 - (void) viewDidLoad {

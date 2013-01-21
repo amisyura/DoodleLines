@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CB110444169A043F00D589CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF9B79E1694A9D400E1B64E /* QuartzCore.framework */; };
+		CB155ACC16ADB5F400808173 /* AbstractCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155ACB16ADB5F400808173 /* AbstractCellView.m */; };
+		CB155AD316ADB7B000808173 /* SimpleCellRed.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155AD216ADB7B000808173 /* SimpleCellRed.m */; };
+		CB155AD616ADB7BD00808173 /* SimpleCellGreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155AD516ADB7BD00808173 /* SimpleCellGreen.m */; };
+		CB155AD916ADB7EB00808173 /* SimpleCellBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155AD816ADB7EB00808173 /* SimpleCellBlue.m */; };
+		CB155ADC16ADB80100808173 /* SimpleCellOrange.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155ADB16ADB80100808173 /* SimpleCellOrange.m */; };
+		CB155AE016ADB8D300808173 /* BonusCellBomp.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155ADF16ADB8D300808173 /* BonusCellBomp.m */; };
+		CB155AE316ADB90C00808173 /* BonusCellLaserBeam.m in Sources */ = {isa = PBXBuildFile; fileRef = CB155AE216ADB90C00808173 /* BonusCellLaserBeam.m */; };
 		CB27627F169B28EC0060D89B /* CoachMarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB27627D169B28EC0060D89B /* CoachMarkController.m */; };
 		CB276280169B28EC0060D89B /* CoachMarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB27627E169B28EC0060D89B /* CoachMarkController.xib */; };
 		CB276282169B2FBC0060D89B /* touch_up.png in Resources */ = {isa = PBXBuildFile; fileRef = CB276281169B2FBC0060D89B /* touch_up.png */; };
@@ -36,6 +43,7 @@
 		CB64F05516A8874D0023AEF5 /* help_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = CB64F05416A8874D0023AEF5 /* help_screen.png */; };
 		CB6CC9FB16A302E20059AF6C /* AbstractController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6CC9FA16A302E20059AF6C /* AbstractController.m */; };
 		CB94ED4816A9C05A00CDCFD2 /* code.gif in Resources */ = {isa = PBXBuildFile; fileRef = CB94ED4716A9C05A00CDCFD2 /* code.gif */; };
+		CB94ED4C16AB387800CDCFD2 /* BoardBonusView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB94ED4B16AB387800CDCFD2 /* BoardBonusView.m */; };
 		CBF9B77B16942F7600E1B64E /* AbstractRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B77A16942F7600E1B64E /* AbstractRectView.m */; };
 		CBF9B77F1694323100E1B64E /* BoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B77E1694323100E1B64E /* BoardView.m */; };
 		CBF9B7821694326900E1B64E /* PreviewBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B7811694326900E1B64E /* PreviewBoardView.m */; };
@@ -45,6 +53,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB155ACA16ADB5F400808173 /* AbstractCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCellView.h; sourceTree = "<group>"; };
+		CB155ACB16ADB5F400808173 /* AbstractCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCellView.m; sourceTree = "<group>"; };
+		CB155AD116ADB7B000808173 /* SimpleCellRed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellRed.h; sourceTree = "<group>"; };
+		CB155AD216ADB7B000808173 /* SimpleCellRed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellRed.m; sourceTree = "<group>"; };
+		CB155AD416ADB7BD00808173 /* SimpleCellGreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellGreen.h; sourceTree = "<group>"; };
+		CB155AD516ADB7BD00808173 /* SimpleCellGreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellGreen.m; sourceTree = "<group>"; };
+		CB155AD716ADB7EB00808173 /* SimpleCellBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellBlue.h; sourceTree = "<group>"; };
+		CB155AD816ADB7EB00808173 /* SimpleCellBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellBlue.m; sourceTree = "<group>"; };
+		CB155ADA16ADB80100808173 /* SimpleCellOrange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellOrange.h; sourceTree = "<group>"; };
+		CB155ADB16ADB80100808173 /* SimpleCellOrange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellOrange.m; sourceTree = "<group>"; };
+		CB155ADE16ADB8D300808173 /* BonusCellBomp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusCellBomp.h; sourceTree = "<group>"; };
+		CB155ADF16ADB8D300808173 /* BonusCellBomp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusCellBomp.m; sourceTree = "<group>"; };
+		CB155AE116ADB90C00808173 /* BonusCellLaserBeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusCellLaserBeam.h; sourceTree = "<group>"; };
+		CB155AE216ADB90C00808173 /* BonusCellLaserBeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusCellLaserBeam.m; sourceTree = "<group>"; };
 		CB27627C169B28EC0060D89B /* CoachMarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachMarkController.h; sourceTree = "<group>"; };
 		CB27627D169B28EC0060D89B /* CoachMarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachMarkController.m; sourceTree = "<group>"; };
 		CB27627E169B28EC0060D89B /* CoachMarkController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoachMarkController.xib; sourceTree = "<group>"; };
@@ -81,6 +103,8 @@
 		CB6CC9F916A302E20059AF6C /* AbstractController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractController.h; sourceTree = "<group>"; };
 		CB6CC9FA16A302E20059AF6C /* AbstractController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractController.m; sourceTree = "<group>"; };
 		CB94ED4716A9C05A00CDCFD2 /* code.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = code.gif; sourceTree = "<group>"; };
+		CB94ED4A16AB387700CDCFD2 /* BoardBonusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardBonusView.h; sourceTree = "<group>"; };
+		CB94ED4B16AB387800CDCFD2 /* BoardBonusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardBonusView.m; sourceTree = "<group>"; };
 		CBF9B77916942F7600E1B64E /* AbstractRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractRectView.h; sourceTree = "<group>"; };
 		CBF9B77A16942F7600E1B64E /* AbstractRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractRectView.m; sourceTree = "<group>"; };
 		CBF9B77D1694323100E1B64E /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
@@ -118,8 +142,55 @@
 				CBF9B77E1694323100E1B64E /* BoardView.m */,
 				CBF9B7801694326900E1B64E /* PreviewBoardView.h */,
 				CBF9B7811694326900E1B64E /* PreviewBoardView.m */,
+				CB94ED4A16AB387700CDCFD2 /* BoardBonusView.h */,
+				CB94ED4B16AB387800CDCFD2 /* BoardBonusView.m */,
 			);
 			name = Board;
+			sourceTree = "<group>";
+		};
+		CB155AC716ADB5CA00808173 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CB155AC916ADB5D200808173 /* Abstract */,
+				CB155ADD16ADB8AA00808173 /* Bonuses */,
+				CB155ACD16ADB73E00808173 /* Simples */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		CB155AC916ADB5D200808173 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				CB155ACA16ADB5F400808173 /* AbstractCellView.h */,
+				CB155ACB16ADB5F400808173 /* AbstractCellView.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		CB155ACD16ADB73E00808173 /* Simples */ = {
+			isa = PBXGroup;
+			children = (
+				CB155AD116ADB7B000808173 /* SimpleCellRed.h */,
+				CB155AD216ADB7B000808173 /* SimpleCellRed.m */,
+				CB155AD416ADB7BD00808173 /* SimpleCellGreen.h */,
+				CB155AD516ADB7BD00808173 /* SimpleCellGreen.m */,
+				CB155AD716ADB7EB00808173 /* SimpleCellBlue.h */,
+				CB155AD816ADB7EB00808173 /* SimpleCellBlue.m */,
+				CB155ADA16ADB80100808173 /* SimpleCellOrange.h */,
+				CB155ADB16ADB80100808173 /* SimpleCellOrange.m */,
+			);
+			name = Simples;
+			sourceTree = "<group>";
+		};
+		CB155ADD16ADB8AA00808173 /* Bonuses */ = {
+			isa = PBXGroup;
+			children = (
+				CB155ADE16ADB8D300808173 /* BonusCellBomp.h */,
+				CB155ADF16ADB8D300808173 /* BonusCellBomp.m */,
+				CB155AE116ADB90C00808173 /* BonusCellLaserBeam.h */,
+				CB155AE216ADB90C00808173 /* BonusCellLaserBeam.m */,
+			);
+			name = Bonuses;
 			sourceTree = "<group>";
 		};
 		CB3A54E94081AB516B14645D /* View */ = {
@@ -295,6 +366,7 @@
 		CBF9B7881694396100E1B64E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB155AC716ADB5CA00808173 /* Cell */,
 				CB0926DE1698BFF900898AC6 /* Board */,
 			);
 			name = Views;
@@ -393,6 +465,14 @@
 				CB27627F169B28EC0060D89B /* CoachMarkController.m in Sources */,
 				CB49C112169C89D7007A5986 /* MainViewController.m in Sources */,
 				CB6CC9FB16A302E20059AF6C /* AbstractController.m in Sources */,
+				CB94ED4C16AB387800CDCFD2 /* BoardBonusView.m in Sources */,
+				CB155ACC16ADB5F400808173 /* AbstractCellView.m in Sources */,
+				CB155AD316ADB7B000808173 /* SimpleCellRed.m in Sources */,
+				CB155AD616ADB7BD00808173 /* SimpleCellGreen.m in Sources */,
+				CB155AD916ADB7EB00808173 /* SimpleCellBlue.m in Sources */,
+				CB155ADC16ADB80100808173 /* SimpleCellOrange.m in Sources */,
+				CB155AE016ADB8D300808173 /* BonusCellBomp.m in Sources */,
+				CB155AE316ADB90C00808173 /* BonusCellLaserBeam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

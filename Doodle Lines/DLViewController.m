@@ -56,7 +56,7 @@ NSString *const settingsShowHelp = @"settingsShowHelp";
     self.brain = [[DLBrain alloc] initWithDelegate:self];
 
     self.board.board = [self.brain getBoardItems];
-    [self.board setNeedsDisplay];
+    [self.board drawCellsOnBoard];
     
     // Set repeating backgound image
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"code.gif"]];
@@ -134,7 +134,7 @@ NSString *const settingsShowHelp = @"settingsShowHelp";
 - (void) boardViewUpdateItem: (NSTimer *) timer {
     [self.brain generatePreviewItemElement];
     self.previewBoard.board = [self.brain getPreviewBoardItems];
-    [self.previewBoard setNeedsDisplay];
+    [self.previewBoard drawCellsOnBoard];
 }
 
 - (void) brainPreviewBoardIsFull:(NSArray *)previewBoardItems {
@@ -142,7 +142,7 @@ NSString *const settingsShowHelp = @"settingsShowHelp";
     // WARNING: Return multiple array!!
     [self.brain pushLineIntoBoardItems:[previewBoardItems objectAtIndex:0]];
     self.board.board = [self.brain getBoardItems];
-    [self.board setNeedsDisplay];
+    [self.board drawCellsOnBoard];
 }
 
 - (void) brainSppedChanged:(float)speed {
@@ -214,7 +214,7 @@ NSString *const settingsShowHelp = @"settingsShowHelp";
 
         if ([self.brain similarCellsWithCoordinateX:cellX andY:cellY]) {
             self.board.board = [self.brain getBoardItems];
-            [self.board setNeedsDisplay];
+            [self.board drawCellsOnBoard];
             [self.labelScoreValue setText:[NSString stringWithFormat:@"%i", [self.brain getScores]]];
         }
 
@@ -233,8 +233,8 @@ NSString *const settingsShowHelp = @"settingsShowHelp";
     gameStarted = NO;
     self.board.board = [self.brain getBoardItems];
     self.previewBoard.board = [self.brain getPreviewBoardItems];
-    [self.board setNeedsDisplay];
-    [self.previewBoard setNeedsDisplay];
+    [self.board drawCellsOnBoard];
+    [self.previewBoard drawCellsOnBoard];
     
     [self.buttonStartStop sendActionsForControlEvents:UIControlEventTouchUpInside];
 }

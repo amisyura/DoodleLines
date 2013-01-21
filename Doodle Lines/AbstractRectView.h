@@ -21,5 +21,6 @@
 @property (strong, nonatomic) NSArray *board;
 
 - (id) initWithFrame:(CGRect)frame andBorderColor: (UIColor *) penColor;
+- (void) drawCellsOnBoard;
 
 @end

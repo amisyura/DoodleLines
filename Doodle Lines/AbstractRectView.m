@@ -7,6 +7,7 @@
 //
 
 #import "AbstractRectView.h"
+#import "AbstractCellView.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -32,6 +33,35 @@
     return self;
 }
 
+- (void) drawCellsOnBoard {
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    
+    int originX = paddingX;
+    int originY = self.frame.size.height;
+    
+    
+    for (NSMutableArray *row in board) {
+        originY -= CELL_HEIGHT;
+        originX = paddingX;
+        for (AbstractCellView *cell in row) {
+            if (![cell isKindOfClass:[AbstractCellView class]]) {
+                continue;
+            }
+            CGRect frame = cell.frame;
+            frame.origin.x = originX;
+            frame.origin.y = originY;
+            cell.frame = frame;
+            
+            [self addSubview:cell];
+            
+            originX += CELL_WIDTH;
+        }
+    }
+}
+
 - (void)drawRect:(CGRect)rect
 {
     int width = self.frame.size.width;
@@ -52,7 +82,7 @@
     
     CGContextStrokePath(context);
     
-    if ([self.board count]) {
+    /*if ([self.board count]) {
         int rowCount = [self.board count];
         if (rowCount == 0) return;
 
@@ -66,20 +96,22 @@
             int columnCount = [currentRow count];
             originX = paddingX;
             for (int x = 0; x < columnCount; x++) {
-                NSString *currentCell = [currentRow objectAtIndex:x];
+                AbstractCellView *currentCell = [currentRow objectAtIndex:x];
 
 //                NSLog(@"DEBUG: %i %i", originX, originY);
-                if ([currentCell isKindOfClass:[NSString class]] && ![currentCell isEqual:@""]) {
+                if ([currentCell isKindOfClass:[AbstractCellView class]]) {
                     UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", currentCell]];
                     CGRect cellRect = CGRectMake(originX, originY, CELL_WIDTH, CELL_HEIGHT);
                     CGContextDrawImage(context, cellRect, image.CGImage);
 //                    NSLog(@"%i %i", originX, originY);
+                    currentCell.frame = cellRect;
+                    [currentCell setNeedsDisplay];
                 }
 
                 originX += CELL_WIDTH;
             }
         }
-    }
+    }*/
 }
 
 
